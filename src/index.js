@@ -8,4 +8,11 @@ app.use(cors({
     origin: ['http://localhost:3000', 'http://localhost:4200', 'http://localhost:5000']
 }))
 
-defa
+app.get('/',(req, res) => {
+    res.send("Hello")
+})
+
+app.listen(8000, () => {
+    console.log('listening to port 8000')
+})
+
