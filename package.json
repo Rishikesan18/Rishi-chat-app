@@ -9,10 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mysql/xdevapi": "^8.0.35",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mysql": "^2.18.1",
+    "mysql-client": "^0.3.0",
+    "mysql2": "^3.10.3",
+    "react": "^18.3.1",
     "reflect-metadata": "^0.2.2",
+    "require": "^0.4.4",
+    "sequence": "^3.0.0",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5",
     "typeorm": "^0.3.20"
@@ -24,6 +31,5 @@
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
-  },
-  "description": ""
+  }
 }
