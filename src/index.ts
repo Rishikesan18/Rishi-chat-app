@@ -2,10 +2,22 @@ import express from 'express';
 import cors from 'cors';
 import {routes} from "./routes";
 import './socket';
+import { DataSource } from 'typeorm';
 
+const dataSource = new DataSource({
+    type:"mysql",
+    host:"localhost",
+    port: 3306,
+    username: "root",
+    password: "password",
+    database: "node_websockets",
+    entities: [],
+    logging: false,
+    synchronize: true
+});
 
-
-const app = express()
+dataSource.initialize().then(connection => {
+    const app = express()
 
 app.use(express.json())
 app.use(cors({
@@ -19,4 +31,5 @@ app.listen(8000, () => {
     console.log('listening to port 8000')
 })
 
+})
 
