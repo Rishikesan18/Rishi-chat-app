@@ -5,4 +5,3 @@ export const Message = (req, res) => {
     console.log(req.body.message)
     res.send('success');
 }
-
