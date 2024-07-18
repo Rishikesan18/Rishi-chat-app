@@ -13,3 +13,4 @@ export const routes = (router: Router) => {
     router.put('/api/user', AuthMiddleware, UpdateUser)
     router.get('/api/users', AuthMiddleware, Users)
 }
+
