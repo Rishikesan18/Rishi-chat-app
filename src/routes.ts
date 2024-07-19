@@ -3,6 +3,7 @@ import {Messages, SendImage, SendMessage} from "./controllers/message.controller
 import {GetUser, Login, Register, UpdateUser} from "./controllers/auth.controller";
 import { AuthMiddleware } from "./middlewares/auth.middleware";
 import { Users } from "./controllers/user.controller";
+import { CreateRoom } from "./controllers/room.controller";
 
 
 export const routes = (router: Router) => {
@@ -15,6 +16,7 @@ export const routes = (router: Router) => {
     router.post('/api/messages', AuthMiddleware, SendMessage)
     router.post('/api/images', AuthMiddleware, SendImage)
     router.use('/api/images', express.static('./uploads'))
+    router.post('/api/rooms', AuthMiddleware, CreateRoom)
 
 }
 

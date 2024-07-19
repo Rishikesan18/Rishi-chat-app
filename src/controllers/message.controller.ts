@@ -16,10 +16,11 @@ export const Messages = async (req, res) => {
         relations: ["sender", "receiver"],
         skip: (page - 1) * take,
         take,
+        order: {created_at: 'DESC'}
     })
 
     res.send({
-        messages,
+        messages: messages.sort((a, b) => Date.parse(a.created_at) > Date.parse(b.created_at) ? 1 : -1),
         total
     })
 
@@ -31,7 +32,7 @@ export const SendMessage = async (req, res) => {
     const message = await Message.save({
         sender: user,
         receiver: {id: req.body.receiver_id},
-        content: req.body.content
+        content: req.body.content,
 
     })
 
