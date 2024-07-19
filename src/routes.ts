@@ -16,6 +16,7 @@ export const routes = (router: Router) => {
     router.post('/api/images', AuthMiddleware, SendImage)
     router.use('/api/images', express.static('./uploads'))
 
-
 }
+
+
 
