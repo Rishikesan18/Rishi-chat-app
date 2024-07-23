@@ -19,4 +19,8 @@ export const routes = (router: Router) => {
     router.post('/api/rooms/:room/messages', AuthMiddleware, RoomMiddleware, SendMessage)
     router.get('/api/rooms', AuthMiddleware, Rooms)
     router.post('/api/rooms', AuthMiddleware, CreateRoom)
+
+    router.post('/api/logout', (req, res) => {
+        res.status(200).send({ message: 'Logged out successfully' });
+    });
 }
